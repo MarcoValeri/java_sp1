@@ -11,22 +11,44 @@ public class PrintDigits {
         String str = n + "";
         String output = "";
 
-        if (str.length() < 5) {
-            int remainder = 5 - str.length();
-            for (int i = 0; i < remainder; i++) {
-                output+= "0".charAt(i) + " ";
-            }
-            for (int i = 0; i < str.length(); i++) {
-                output+= str.charAt(i) + " ";
-            }
-        } else {
-            for (int i = 0; i < str.length(); i++) {
-                output+= str.charAt(i) + " ";
-            }
+        switch (str.length()) {
+
+            case 0:
+            output+= "0 0 0 0 0";
+            break;
+
+            case 1:
+            output+= "0 0 0 0 " + str.charAt(0);
+            break;
+
+            case 2:
+            output+= "0 0 0 " + str.charAt(0) + " " + str.charAt(1);
+            break;
+
+            case 3:
+            output+= "0 0 " + str.charAt(0) + " " + str.charAt(1) + " " + str.charAt(2);
+            break;
+
+            case 4:
+            output+= "0 " + 
+            str.charAt(0) + " " +
+            str.charAt(1) + " " +
+            str.charAt(2) + " " +
+            str.charAt(3) + " ";
+            break;
+
+            case 5:
+            output+= str.charAt(0) + " " +
+            str.charAt(1) + " " +
+            str.charAt(2) + " " +
+            str.charAt(3) + " " +
+            str.charAt(4) + " ";
+            break;
+
+            default:
+            System.out.println("Error: something is gone wrong");
         }
 
-        
-        System.out.println("Length: " + str.length());
         System.out.println(output);
     }
 
