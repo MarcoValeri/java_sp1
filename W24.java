@@ -1,15 +1,17 @@
-import javax.swing.plaf.basic.BasicBorders.MarginBorder;
-
 public class W24 {
 
     public static void main(String[] args) {
-        double num_one = 0.0;
-        double num_two = 0.99998;
-        double num_three = 0.98999;
+        double num_one = 2.0;
+        double num_two = 1.98998;
 
-        System.out.println(Math.round(num_one));
-        System.out.println(Math.round(num_two));
-        System.out.print(Math.round(num_three));
+        long one = Math.round(num_one * 100);
+        long two = Math.round(num_two * 100);
+
+        if (one == two) {
+            System.out.println("They are the same up to two decimal places.");
+        } else {
+            System.out.println("They are different.");
+        }
     }
 
 }
